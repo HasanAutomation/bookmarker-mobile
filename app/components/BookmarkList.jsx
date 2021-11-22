@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, TouchableOpacity } from 'react-native';
+import { FlatList } from 'react-native';
 import Card from './Card';
 
 import MOCKDATA from '../utils/bookmarks.json';
@@ -18,7 +18,7 @@ export default function BookmarkList({ bookmarks = MOCKDATA }) {
       <FlatList
         showsVerticalScrollIndicator={false}
         data={bookmarks}
-        keyExtractor={bookmark => bookmark._id.$oid.toString()}
+        keyExtractor={bookmark => bookmark._id}
         renderItem={showData}
       />
     </>

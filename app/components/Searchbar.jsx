@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 
-export default function Searchbar() {
-  const [term, setTerm] = useState('');
+export default function Searchbar({ onChange, value }) {
   return (
     <View style={styles.container}>
       <TextInput
+        placeholder='Search any keyword'
         style={styles.textInput}
-        value={term}
-        onChangeText={text => setTerm(text)}
+        value={value}
+        onChangeText={text => {
+          onChange(text);
+        }}
       />
     </View>
   );

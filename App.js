@@ -1,18 +1,16 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import Card from './app/components/Card';
+import React, { useEffect } from 'react';
 import { AppNavigator } from './app/navigation/AppNavigator';
+import { AuthNavigator } from './app/navigation/AuthNavigator';
 import navigationTheme from './app/navigation/navigationTheme';
-import Home from './app/screens/Home';
-import Search from './app/screens/Search';
+import bookmarks from './app/utils/api/bookmarks';
 
 export default function App() {
   return (
     <NavigationContainer theme={navigationTheme}>
-      {/* <Home /> */}
-      {/* <Serch /> */}
       <AppNavigator />
+      {/* <AuthNavigator /> */}
       <StatusBar style='auto' />
     </NavigationContainer>
   );

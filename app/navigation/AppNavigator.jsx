@@ -34,12 +34,10 @@ export const AppNavigator = () => (
       name='Search'
       component={Search}
       options={{
-        // headerShown: false,
         tabBarIcon: ({ size, color }) => (
           <MaterialCommunityIcons name='search-web' size={size} color={color} />
         ),
       }}
     />
-    {/* <Tab.Screen name='Home' component={Home} /> */}
   </Tab.Navigator>
 );
