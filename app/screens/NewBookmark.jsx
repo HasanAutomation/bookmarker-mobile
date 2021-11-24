@@ -14,9 +14,7 @@ const validationSchema = Yup.object().shape({
 });
 
 function NewBookmark() {
-  const handleSubmit = values => {
-    console.log(values);
-  };
+  const handleSubmit = values => {};
 
   return (
     <Screen style={styles.screen}>
