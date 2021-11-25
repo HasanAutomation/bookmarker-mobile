@@ -5,6 +5,8 @@ import Home from '../screens/Home';
 import Search from '../screens/Search';
 import NewBookmark from '../screens/NewBookmark';
 import AddBookmarkButton from './AddBookmarkButton';
+import Account from '../screens/Account';
+import Admin from '../screens/Admin';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,6 +24,16 @@ export const AppNavigator = () => (
       component={Home}
     />
     <Tab.Screen
+      name='Search'
+      component={Search}
+      options={{
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons name='search-web' size={size} color={color} />
+        ),
+      }}
+    />
+
+    <Tab.Screen
       name='Add'
       options={({ navigation }) => ({
         tabBarButton: () => (
@@ -31,13 +43,27 @@ export const AppNavigator = () => (
       component={NewBookmark}
     />
     <Tab.Screen
-      name='Search'
-      component={Search}
+      name='Admin'
       options={{
-        tabBarIcon: ({ size, color }) => (
-          <MaterialCommunityIcons name='search-web' size={size} color={color} />
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons
+            name='controller-classic'
+            size={size}
+            color={color}
+          />
         ),
       }}
+      component={Admin}
+    />
+
+    <Tab.Screen
+      name='Account'
+      options={{
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons name='account' size={size} color={color} />
+        ),
+      }}
+      component={Account}
     />
   </Tab.Navigator>
 );

@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { useRoute } from '@react-navigation/native';
+import React, { useEffect, useState, memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import AppLoading from '../components/AppLoading';
 import BookmarkList from '../components/BookmarkList';
 import bookmarks from '../utils/api/bookmarks';
 
-export default function Home() {
+function Home() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const { params } = useRoute();
 
   const loadBookmarks = async page => {
     setLoading(true);
@@ -17,7 +20,7 @@ export default function Home() {
 
   useEffect(() => {
     loadBookmarks(1);
-  }, []);
+  }, [params]);
 
   if (loading) return <AppLoading loading={loading} />;
 
@@ -33,3 +36,5 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
+
+export default memo(Home);
