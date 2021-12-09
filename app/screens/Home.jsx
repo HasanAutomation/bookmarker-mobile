@@ -3,6 +3,7 @@ import React, { useEffect, useState, memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import AppLoading from '../components/AppLoading';
 import BookmarkList from '../components/BookmarkList';
+import cache from '../utility/cache';
 import bookmarks from '../utils/api/bookmarks';
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
 
   const loadBookmarks = async page => {
     setLoading(true);
+    // console.log('DATA in store==', await cache.get('/bookmarks/?page=1'));
     const { data } = await bookmarks.getBookmarks(page);
     setData(data.data);
     setLoading(false);
