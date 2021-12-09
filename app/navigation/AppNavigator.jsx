@@ -15,6 +15,7 @@ export const AppNavigator = () => (
     <Tab.Screen
       options={{
         headerTitle: 'Bookmarks',
+        headerShown: false,
         tabBarLabel: 'Bookmarks',
         tabBarIcon: ({ size, color }) => (
           <MaterialCommunityIcons name='home' size={size} color={color} />
