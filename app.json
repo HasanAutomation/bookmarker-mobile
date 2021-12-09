@@ -21,7 +21,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.bookmarkerhasan.com",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
