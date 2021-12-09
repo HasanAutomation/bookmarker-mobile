@@ -1,9 +1,10 @@
 import { create } from 'apisauce';
 import storage from '../storage';
 import cache from '../../utility/cache';
+import settings from '../../config/settings';
 
 const apisauceInstance = create({
-  baseURL: 'https://bookmark-web-api.herokuapp.com/api/v1',
+  baseURL: settings.baseURL,
 });
 
 const get = apisauceInstance.get;
